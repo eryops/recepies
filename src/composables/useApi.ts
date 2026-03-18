@@ -8,3 +8,20 @@ export async function apiGet<T>(url: string): Promise<T> {
   const data = await response.json()
   return data as T
 }
+
+export async function apiPut<T>(url: string, body: unknown): Promise<T> {
+  const response = await fetch(url, {
+    method: 'PUT',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify(body),
+  })
+
+  if (!response.ok) {
+    throw new Error(`Error putting to ${url}: ${response.status} ${response.statusText}`)
+  }
+
+  const data = await response.json()
+  return data as T
+}
