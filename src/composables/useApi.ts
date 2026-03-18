@@ -42,3 +42,13 @@ export async function apiPost<T>(url: string, body: unknown): Promise<T> {
   const data = await response.json()
   return data as T
 }
+
+export async function apiDelete(url: string): Promise<void> {
+  const response = await fetch(url, {
+    method: 'DELETE',
+  })
+
+  if (!response.ok) {
+    throw new Error(`Error deleting ${url}: ${response.status} ${response.statusText}`)
+  }
+}
