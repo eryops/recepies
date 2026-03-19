@@ -1,0 +1,51 @@
+/**
+  Design Tokens - Dark mode (default mode)
+**/
+
+:root {
+  /* Base */
+  --color-bg: #111;
+  --color-text: #eee;
+  --color-border: #333;
+
+  /* Surfaces */
+  --color-surface-1: #1a1a1a;
+  --color-surface-2: #222;
+
+  /* Accent */
+  --color-accent: #4db6ff;
+  --color-accent-hover: #7ccaff;
+
+  /* Typography */
+  --font-body: 'Inter', sans-serif;
+
+  /* Spacing */
+  --space-s: 0.5rem;
+  --space-m: 1rem;
+  --space-l: 2rem;
+
+  /* Radius */
+  --radius-s: 0.25rem;
+  --radius-m: 0.5rem;
+}
+
+/**
+  Light mode (activated for users with light mode preference)
+**/
+
+@media (prefers-color-scheme: light) {
+  :root {
+    /* Base */
+    --color-bg: #fff;
+    --color-text: #111;
+    --color-border: #ccc;
+
+    /* Surfaces */
+    --color-surface-1: #f9f9f9;
+    --color-surface-2: #eee;
+
+    /* Accent */
+    --color-accent: #4db6ff;
+    --color-accent-hover: #7ccaff;
+  }
+}

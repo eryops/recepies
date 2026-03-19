@@ -16,26 +16,22 @@
 </template>
 
 <style lang="scss" scoped>
-$app-border: #ddd;
-$app-padding: 1rem;
-
 .app {
+  width: 100%;
   min-height: 100vh;
-  display: flex;
-  flex-direction: column;
 }
 
 .app-header {
-  padding: $app-padding;
-  border-bottom: 1px solid $app-border;
+  padding: var(--space-m);
+  border-bottom: 1px solid var(--color-border);
 
   .nav {
     display: flex;
-    gap: 1rem;
+    gap: var(--space-m);
 
     .nav-link {
       text-decoration: none;
-      color: #333;
+      color: var(--color-text);
       font-weight: 500;
 
       &:hover {
@@ -44,14 +40,14 @@ $app-padding: 1rem;
 
       &.router-link-active {
         font-weight: 600;
-        color: #000;
+        color: var(--color-text);
       }
     }
   }
 }
 
 .app-main {
-  padding: 2rem;
+  padding: var(--space-l);
   flex: 1;
 }
 </style>
