@@ -11,7 +11,7 @@ export const router = createRouter({
       meta: { title: 'Receptlista' },
     },
     {
-      path: '/recipes/:id',
+      path: '/recipes/:id/:slug?',
       name: 'recipe-detail',
       component: () => import('@/pages/RecipeDetail.vue'),
       meta: { title: 'Recept' },
