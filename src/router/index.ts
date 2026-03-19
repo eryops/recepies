@@ -1,7 +1,7 @@
-import { createRouter, createWebHashHistory } from 'vue-router'
+import { createRouter, createWebHistory } from 'vue-router'
 
 export const router = createRouter({
-  history: createWebHashHistory(),
+  history: createWebHistory(),
   routes: [
     { path: '/', redirect: '/recipes' },
     { path: '/recipes', name: 'recipe', component: () => import('@/pages/RecipeList.vue') },

@@ -1,47 +1,57 @@
-<script setup lang="ts">
-import HelloWorld from './components/HelloWorld.vue'
-import TheWelcome from './components/TheWelcome.vue'
-</script>
+<script setup lang="ts"></script>
 
 <template>
-  <header>
-    <img alt="Vue logo" class="logo" src="./assets/logo.svg" width="125" height="125" />
+  <div class="app">
+    <header class="app-header">
+      <nav class="nav">
+        <router-link to="/recipes" class="nav-link">Recept</router-link>
+        <router-link to="/recipes/new" class="nav-link">Nytt recept</router-link>
+      </nav>
+    </header>
 
-    <div class="wrapper">
-      <HelloWorld msg="You did it!" />
-    </div>
-  </header>
-
-  <main>
-    <TheWelcome />
-  </main>
+    <main class="app-main">
+      <router-view />
+    </main>
+  </div>
 </template>
 
-<style scoped>
-header {
-  line-height: 1.5;
+<style lang="scss" scoped>
+$app-border: #ddd;
+$app-padding: 1rem;
+
+.app {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
-.logo {
-  display: block;
-  margin: 0 auto 2rem;
+.app-header {
+  padding: $app-padding;
+  border-bottom: 1px solid $app-border;
+
+  .nav {
+    display: flex;
+    gap: 1rem;
+
+    .nav-link {
+      text-decoration: none;
+      color: #333;
+      font-weight: 500;
+
+      &:hover {
+        text-decoration: underline;
+      }
+
+      &.router-link-active {
+        font-weight: 600;
+        color: #000;
+      }
+    }
+  }
 }
 
-@media (min-width: 1024px) {
-  header {
-    display: flex;
-    place-items: center;
-    padding-right: calc(var(--section-gap) / 2);
-  }
-
-  .logo {
-    margin: 0 2rem 0 0;
-  }
-
-  header .wrapper {
-    display: flex;
-    place-items: flex-start;
-    flex-wrap: wrap;
-  }
+.app-main {
+  padding: 2rem;
+  flex: 1;
 }
 </style>
