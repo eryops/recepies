@@ -67,6 +67,7 @@ table {
   width: 100%;
 }
 
+/* Accessibility: Reduce motion for users who prefer it */
 @media (prefers-reduced-motion: reduce) {
   * {
     animation-duration: 0.01ms !important;
